@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Caldwell Zoo</title>
+    <style>
+        .page-head {
+            text-align: center;
+            background-color: #888888;
+            color: #ffffff;
+        }
+
+        .nav-bar {
+            background-color: #888888;
+            text-align: center;
+        }
+
+        .data-text {
+            overflow-y: scroll;
+            color: #ffffff;
+        }
+
+        .exhibit {
+            height: 30%;
+        }
+
+        .exhibit-name {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="page-head">CALDWELL ZOO</div>
+    <div class="btn-group nav-bar" role="group"></div>
+    <div class="data-text">
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <img class="exhibit savanna_link" src="img/savanna.jpg">
+                    </td>
+                    <td>
+                        <div class="exhibit-name savanna_link">AFRICAN SAVANNA</div>
+                        <div class="exhibit-text savanna_link">Lions, elephants, giraffes and zebras are among the sights you'll see as you stroll through the African Savanna. You can also take in the view from the Chakula Café.</div>
+                    </td>
+                </tr>
+                <tr><td><div style="height: 20px;"></div></td></tr>
+                <tr>
+                    <td>
+                        <img class="exhibit aquarium_link" src="img/african-aquarium.jpg">
+                    </td>
+                    <td>
+                        <div class="exhibit-name aquarium_link">AFRICAN AQUARIUM</div>
+                        <div class="exhibit-text aquarium_link">Find black-footed penguins, cichlid fish, tortoises, African gray parrots, rock hyrax and more at the African Aquarium.</div>
+                    </td>
+                </tr>
+                <tr><td><div style="height: 20px;"></div></td></tr>
+                <tr>
+                    <td>
+                        <img class="exhibit namerica_link" src="img/north-america.jpg">
+                    <td>
+                        <div class="exhibit-name namerica_link">NORTH AMERICA</div>
+                        <div class="exhibit-text namerica_link">You’ll find sleek mountain lions, majestic bald eagles and roaming bison in the North America section. And, don't forget to visit Tyler and Timber, Caldwell Zoo's black bears.</div>
+                    </td>
+                </tr>
+                <tr><td><div style="height: 20px;"></div></td></tr>
+                <tr>
+                    <td>
+                        <img class="exhibit herpetarium_link" src="img/herpetarium.jpg">
+                    <td>
+                        <div class="exhibit-name herpetarium_link">NORTH AMERICA HERPETARIUM</div>
+                        <div class="exhibit-text herpetarium_link">The North American Herpetarium is home to an array of fishes, snakes, frogs and lizards from our continent, in addition to amazing tarantulas from around the globe!</div>
+                    </td>
+                </tr>
+                <tr><td><div style="height: 20px;"></div></td></tr>
+                <tr>
+                    <td>
+                        <img class="exhibit samerica_link" src="img/south-america.jpg">
+                    <td>
+                        <div class="exhibit-name samerica_link">SOUTH AMERICA</div>
+                        <div class="exhibit-text samerica_link">The South American section offers attractions like the world's largest rodent, giant anteaters, colorful macaws and squirrel monkeys.</div>
+                    </td>
+                </tr>
+                <tr><td><div style="height: 20px;"></div></td></tr>
+                <tr>
+                    <td>
+                        <img class="exhibit wildbird_link" src="img/wild-bird-walkabout.jpg">
+                    <td>
+                        <div class="exhibit-name wildbird_link">WILD BIRD WALKABOUT</div>
+                        <div class="exhibit-text wildbird_link">Enjoy a conversation with a parakeet! Give a cockatiel a snack! The Wild Bird Walkabout is a free-flight aviary with over 600 gorgeous birds that you can feed and interact with.</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/vendor/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/vendor/bootstrap.js"></script>
+<script type="text/javascript">
+    app.initialize();
+
+    (function(){
+        $('.data-text').css('height',window.innerHeight-70);
+    })();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Caldwell Zoo</title>
+    <style>
+        .page-head {
+            text-align: center;
+            background-color: #888888;
+            color: #ffffff;
+        }
+
+        .nav-bar {
+            background-color: #888888;
+            text-align: center;
+        }
+
+        .data-text {
+            overflow-y: scroll;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="page-head">CALDWELL ZOO</div>
+    <div class="btn-group nav-bar" role="group"></div>
+    <div class="data-text">
+        African Aquarium
+        Come on in. There’s something in the water! It’s a colony of black-footed penguins! These tuxedo-clad birds aren’t Antarctic/sub-Antarctic dwellers, but do come from a temperate region of southern Africa, so you won’t see any ice and snow in their home. In fact, it is usually a pleasant 70º in their exhibit. Walking on through the building, there’s more in the water – a big tank of cichlid fish. Behind the tank of fish, tortoises can be seen prowling. Weavers, turacos, plovers and African gray parrots enjoy the space along with a pair of rock hyrax. And there is a glimpse of what’s to come as an African lion is seen through the glass wall…
+    </div>
+</div>
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/vendor/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/vendor/bootstrap.js"></script>
+<script type="text/javascript">
+    app.initialize();
+
+    (function(){
+        $('.map').css('height',window.innerHeight-80);
+    })();
+
+</script>
+</body>
+</html>

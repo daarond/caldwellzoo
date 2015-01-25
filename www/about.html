@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Caldwell Zoo</title>
+    <style>
+        .page-head {
+            text-align: center;
+            background-color: #888888;
+            color: #ffffff;
+        }
+
+        .nav-bar {
+            background-color: #888888;
+            text-align: center;
+        }
+
+        .data-text {
+            overflow-y: scroll;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="app">
+    <div class="page-head">CALDWELL ZOO</div>
+    <div class="btn-group nav-bar" role="group"></div>
+    <div class="data-text">
+        <h2>About The Zoo</h2>
+        <p>Caldwell Zoo is the culmination of one man’s vision and love of children. It started in 1937, when David King Caldwell opened a Child Development Laboratory at his home. The playschool – complete with parrots, monkeys, squirrels and more – was a huge hit that soon grew to host a variety of animals and span a patchwork of buildings and land. Mr. Caldwell’s vision of a proper zoo for the children of east Texas was realized in 1953, when Caldwell Zoo officially opened on the site it occupies today. Early Zoo residents included a lion and chimpanzee who had retired from careers in television.</p>
+        <p>Completion of a master plan in 1976 provided a new entrance complex, elephant facility, giraffe barn and other animal environments. A 15-acre native Texas area and Texas farm opened in 1983, followed by the Texas reptile and aquarium building. In 1987, the Zoo added hoofstock barns, a modern elephant facility (converting the existing elephant facility to accommodate rhinos) and the Overlook plaza.</p>
+        <p>Throughout its history, Caldwell Zoo has welcomed new animals and enjoyed many highlights. In 1982, the first baby giraffe was born, and in 1989, the first Chilean flamingo chick hatched. The Zoo collaborated with other institutions in 1991 to produce the world’s first cheetah cub conceived through artificial insemination. The year 2002 brought the endangered Attwater’s Prairie Chicken breeding program to Caldwell Zoo, which resulted in the discovery of a new form of life at the Zoo in 2009 – Eimeria Attwaterii.</p>
+        <p>Caldwell Zoo is cherished by the people of east Texas and beyond as a beautiful, fun place for children and adults to learn about wildlife – a place made possible by D.K. Caldwell.</p>
+    </div>
+</div>
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/vendor/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/vendor/bootstrap.js"></script>
+<script type="text/javascript">
+    app.initialize();
+
+    (function(){
+        $('.data-text').css('height',window.innerHeight-70);
+    })();
+
+</script>
+</body>
+</html>
