@@ -11,12 +11,6 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Caldwell Zoo</title>
         <style>
-            .page-head {
-                text-align: center;
-                background-color: #888888;
-                color: #ffffff;
-            }
-
             .item-head {
                 text-align: center;
                 background-color: #888888;
@@ -30,31 +24,40 @@
                 height: 300px;
             }
 
-            .nav-bar {
-                background-color: #888888;
-                text-align: center;
-            }
-
             .map-bar {
                 width:100%;
-                height:20%;
+                height:150px;
                 margin-top: 10px;
                 margin-bottom: 10px;
                 text-align: center;
+                overflow: hidden;
+                background-image: url("img/map-strip.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            .map-bar div {
+                margin-top: 50px;
+                font-size: xx-large;
+                font-weight: bolder;
             }
         </style>
     </head>
     <body>
         <div class="app">
-            <div class="page-head">CALDWELL ZOO</div>
-            <div class="btn-group nav-bar" role="group"></div>
+            <nav location="home_link"></nav>
             <div class="map-bar map_link">
-                <img src="img/map.jpg">
+                <div>Zoo Map</div>
             </div>
-            <div class="news">
+            <div class="news" style="background-color: #ffffff">
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </button>
                 <div class="item-head"><img src="img/zoos-flash-logo.png"></div>
                 <ul class="news-list list-group"></ul>
             </div>
+
+
         </div>
         <!--<script type="text/javascript" src="cordova.js"></script>-->
         <script type="text/javascript" src="js/index.js"></script>

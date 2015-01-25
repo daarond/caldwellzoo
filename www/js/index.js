@@ -50,27 +50,56 @@ var app = {
 };
 
 var bind_navigation = function(){
-    var navbar = $('.nav-bar');
-    navbar.append('<button type="button" class="btn btn-default home_link">Home</button>');
-    navbar.append('<button type="button" class="btn btn-default map_link">Map</button>');
-    var exhibits = '<div class="btn-group" role="group">'+
-        '  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">'+
-        'Exhibits'+
-        '    <span class="caret"></span>'+
-        '  </button>'+
-        '  <ul class="dropdown-menu" role="menu" style="width: 200px;">'+
-        '    <li><span class="overview_link">Overview</span></li>'+
-        '    <li><span class="savanna_link">African Savanna</span></li>'+
-        '    <li><span class="aquarium_link">African Aquarium</span></li>'+
-        '    <li><span class="namerica_link">North America</span></li>'+
-        '    <li><span class="herpetarium_link">North American Herpetarium</span></li>'+
-        '    <li><span class="samerica_link">South America</span></li>'+
-        '    <li><span class="wildbird_link">Wild Bird Walkabout</span></li>'+
-        '  </ul>'+
-        '</div>';
-    navbar.append(exhibits);
-    navbar.append('<button type="button" class="btn btn-default membership_link">Membership</button>');
-    navbar.append('<button type="button" class="btn btn-default about_link">About</button>');
+
+    var navbar_children = '    <div class="container-fluid">'+
+    '        <!-- Brand and toggle get grouped for better mobile display -->'+
+    '        <div class="navbar-header">'+
+    '            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">'+
+    '                <span class="sr-only">Toggle navigation</span>'+
+    '                <span class="icon-bar"></span>'+
+    '                <span class="icon-bar"></span>'+
+    '                <span class="icon-bar"></span>'+
+    '            </button>'+
+    '            <a class="navbar-brand" href="#" style="padding-left: 50px;">Caldwell Zoo</a>'+
+    '        </div>'+
+    '        <!-- Collect the nav links, forms, and other content for toggling -->'+
+    '        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">'+
+    '            <ul class="nav navbar-nav">'+
+    '                <li><a class="home_link" href="#">Home</a></li>'+
+    '                <li><a class="map_link" href="#">Map</a></li>'+
+    '                <li class="dropdown exhibits-menu-list">'+
+    '                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exhibits<span class="caret"></span></a>'+
+    '                <ul class="dropdown-menu" role="menu">'+
+    '                    <li><a class="overview_link">Overview</a></li>'+
+    '                    <li class="divider"></li>'+
+    '                    <li><a class="savanna_link">African Savanna</a></li>'+
+    '                    <li><a class="aquarium_link">African Aquarium</a></li>'+
+    '                    <li><a class="namerica_link">North America</a></li>'+
+    '                    <li><a class="herpetarium_link">North American Herpetarium</a></li>'+
+    '                    <li><a class="samerica_link">South America</a></li>'+
+    '                    <li><a class="wildbird_link">Wild Bird Walkabout</a></li>'+
+    '                </ul>'+
+    '                <li><a class="membership_link" href="#">Membership</a></li>'+
+    '                <li><a class="about_link" href="#">About Caldwell Zoo</a></li>'+
+    '            </li>'+
+    '            </ul>'+
+    '        </div>'+
+    '    </div>';
+    var nav = $('nav');
+    nav_location = nav.attr('location');
+    nav.addClass('navbar')
+        .addClass('navbar-default')
+        .addClass('navbar-inverse')
+        .addClass('navbar-fixed-top')
+        .append(navbar_children);
+    var active_item = nav.find('.'+nav_location).closest('li');
+    active_item.addClass('active');
+    if (active_item.parent().closest('li').hasClass('exhibits-menu-list')){
+        active_item.parent().closest('li').addClass('active');
+    }
+
+    // <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-chevron-left"></span>Zoo</a>'+
+
 
     $('.map_link').click(function(){
         window.location = 'map.html';
