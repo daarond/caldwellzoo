@@ -60,7 +60,8 @@ var bind_navigation = function(){
     '                <span class="icon-bar"></span>'+
     '                <span class="icon-bar"></span>'+
     '            </button>'+
-    '            <a class="navbar-brand" href="#" style="padding-left: 50px;">Caldwell Zoo</a>'+
+    '            <a id="page_back" class="navbar-brand" href="#"></a>'+
+    '            <a id="nav_page_title" class="navbar-brand" href="#" style="padding-left: 30px;">Caldwell Zoo</a>'+
     '        </div>'+
     '        <!-- Collect the nav links, forms, and other content for toggling -->'+
     '        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">'+
@@ -98,7 +99,15 @@ var bind_navigation = function(){
         active_item.parent().closest('li').addClass('active');
     }
 
-    // <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-chevron-left"></span>Zoo</a>'+
+    var page_back = $('#page_back');
+    var page_title = $('#nav_page_title');
+    page_title.text(nav.attr('title'));
+    back_title = nav.attr('previous_title');
+    back_link = nav.attr('previous_link');
+    page_back.empty();
+    if (back_link!=undefined && back_title!=undefined){
+        page_back.addClass(back_link).html('<span class="glyphicon glyphicon-chevron-left"></span>'+back_title);
+    }
 
 
     $('.map_link').click(function(){

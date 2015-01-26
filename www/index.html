@@ -13,7 +13,7 @@
         <style>
             .item-head {
                 text-align: center;
-                background-color: #888888;
+                background-color: orange;
                 color: #ffffff;
                 height: 50px;
             }
@@ -41,6 +41,10 @@
                 font-size: xx-large;
                 font-weight: bolder;
             }
+
+            .list-group-item {
+                background-color: #FCF3CC;
+            }
         </style>
     </head>
     <body>
@@ -49,10 +53,7 @@
             <div class="map-bar map_link">
                 <div>Zoo Map</div>
             </div>
-            <div class="news" style="background-color: #ffffff">
-                <button type="button" class="btn btn-default">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </button>
+            <div class="news">
                 <div class="item-head"><img src="img/zoos-flash-logo.png"></div>
                 <ul class="news-list list-group"></ul>
             </div>
@@ -67,7 +68,7 @@
             app.initialize();
 
             (function(){
-                $('.news').css('height',window.innerHeight-250);
+                $('.news ul').css('height',window.innerHeight-310);
                 get_news();
             })();
 

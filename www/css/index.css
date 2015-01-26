@@ -115,11 +115,11 @@ h1 {
 }
 
 body {
-    background-color: #000000;
+    background-color: #FCF3CC;
     padding-top: 70px;
 }
 
 .data-text {
     overflow-y: scroll;
-    color: #ffffff;
+    color: #000000;
 }
