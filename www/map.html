@@ -9,54 +9,37 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/leaflet.css" />
     <title>Caldwell Zoo</title>
+    <style>
+        #map { height: 600px; }
+    </style>
 </head>
 <body>
 <div class="app">
     <nav location="map_link" title="Zoo Map" previous_title="Home" previous_link="home_link"></nav>
-    <div class="map">
-        <img src="img/map.jpg" style="width: 100%;" usemap="#map">
-
-        <map name="map">
-            <area shape="poly" coords="381, 423, 144, 253, 220, 106, 307, 52, 382, 107, 422, 176, 365, 173, 343, 205, 367, 235, 401, 230, 411, 236, 424, 277, 433, 357" title="African Savanna" class="savanna_link" />
-            <area shape="circle" coords="379, 203, 27" title="Aquarium" class="aquarium_link" />
-            <area shape="circle" coords="609, 185, 31" title="Herpetarium" class="herpetarium_link" />
-            <area shape="circle" coords="719, 242, 44" title="Wild Bird" class="wildbird_link" />
-            <area shape="poly" coords="438, 353, 432, 286, 413, 224, 434, 189, 389, 107, 474, 62, 604, 66, 658, 144, 641, 153, 597, 141, 563, 168, 563, 211, 613, 239, 618, 332" title="North America" class="namerica_link" />
-            <area shape="poly" coords="178, 284, 366, 421, 348, 519, 219, 611, 119, 576, 103, 369" title="South America" class="samerica_link" />
-        </map>
+    <div id="map">
+        <img src="img/map.jpg" usemap="#maparea" ismap style="height:100%">
     </div>
-    <div class="btn-group" role="group">
-        <button id="btn_zoom_in" type="button" class="btn btn-default"><span class="glyphicon glyphicon-zoom-in"></span>Zoom In</button>
-        <button id="btn_zoom_out" type="button" class="btn btn-default"><span class="glyphicon glyphicon-zoom-out"></span>Zoom Out</button>
-        <button id="btn_zoom_reset" type="button" class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span>Reset</button>
-    </div>
+    <map name="maparea">
+        <area shape="poly" coords="381, 423, 144, 253, 220, 106, 307, 52, 382, 107, 422, 176, 365, 173, 343, 205, 367, 235, 401, 230, 411, 236, 424, 277, 433, 357" title="African Savanna" class="savanna_link" />
+        <area shape="circle" coords="379, 203, 27" title="Aquarium" class="aquarium_link" />
+        <area shape="circle" coords="609, 185, 31" title="Herpetarium" class="herpetarium_link" />
+        <area shape="circle" coords="719, 242, 44" title="Wild Bird" class="wildbird_link" />
+        <area shape="poly" coords="438, 353, 432, 286, 413, 224, 434, 189, 389, 107, 474, 62, 604, 66, 658, 144, 641, 153, 597, 141, 563, 168, 563, 211, 613, 239, 618, 332" title="North America" class="namerica_link" />
+        <area shape="poly" coords="178, 284, 366, 421, 348, 519, 219, 611, 119, 576, 103, 369" title="South America" class="samerica_link" />
+    </map>
 </div>
 <!--<script type="text/javascript" src="cordova.js"></script>-->
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/vendor/jquery-1.11.1.min.js"></script>
-<script src="js/vendor/jquery.panzoom.js"></script>
 <script type="text/javascript" src="js/vendor/bootstrap.js"></script>
 <script type="text/javascript">
     app.initialize();
 
     (function(){
-        $('.map').css('height',window.innerHeight-100)
-                .panzoom({
-                    minScale: 0,
-                    $zoomIn: $('#btn_zoom_in'),
-                    $zoomOut: $('#btn_zoom_out')
-                    //$reset: $('#btn_zoom_reset')
-                })
-                .panzoom("zoom", 2.5, { silent: true })
-                .panzoom("pan", -40, 170, { relative: true });
+        $('#map').css('height',window.innerHeight-50);
     })();
-
-    $('#btn_zoom_reset').click(function(){
-        $('.map').panzoom("zoom", 2.5, { silent: true })
-                .panzoom("pan", -40, 170, { relative: true });
-    });
-
 </script>
 </body>
 </html>
