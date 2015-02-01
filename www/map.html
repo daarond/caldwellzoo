@@ -13,11 +13,38 @@
     <title>Caldwell Zoo</title>
     <style>
         #map { height: 600px; }
+
+        #circle {
+            position: absolute;
+            top:480px;
+            left:390px;
+            width: 40px;
+            height: 40px;
+            background: blue;
+            opacity: 0.6;
+            -moz-border-radius: 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 50px;
+            display: none;
+        }
     </style>
 </head>
 <body>
 <div class="app">
     <nav location="map_link" title="Zoo Map" previous_title="Home" previous_link="home_link"></nav>
+    <div>
+        Exitibt:
+        <select id="exhibit">
+            <option disabled selected>Select Exhibit</option>
+            <option value="savanna" top="260" left="260">African Savanna</option>
+            <option value="aquarium" top="270" left="360">Aquarium</option>
+            <option value="herpetarium" top="250" left="590">Herpetarium</option>
+            <option value="wildbird" top="310" left="690">Wild Bird</option>
+            <option value="namerica" top="320" left="460">North America</option>
+            <option value="samerica" top="540" left="180">South America</option>
+        </select>
+    </div>
+    <div id="circle"></div>
     <div id="map">
         <img src="img/map.jpg" usemap="#maparea" ismap style="height:100%">
     </div>
@@ -36,6 +63,28 @@
 <script type="text/javascript" src="js/vendor/bootstrap.js"></script>
 <script type="text/javascript">
     app.initialize();
+
+    $('#exhibit').on('change', function(){
+        var option = $(this).find('option:selected')[0];
+
+        var proportion = ($('#map').height())/750;
+
+        var top = Math.ceil($(option).attr('top') * proportion)+20;
+        var left = Math.ceil($(option).attr('left') * proportion);
+
+        $('#circle')
+                .css('top', top+'px')
+                .css('left', left+'px')
+                .attr('class','')
+                .addClass(option.value+'_link')
+                .fadeIn( "slow" );
+
+        setInterval(function(){
+            $( "#circle" ).fadeOut( "slow", function() {
+                $( "#circle" ).fadeIn( "slow" );
+            });
+        },3000);
+    });
 
     (function(){
         $('#map').css('height',window.innerHeight-50);

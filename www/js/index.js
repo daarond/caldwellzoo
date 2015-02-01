@@ -145,32 +145,22 @@ var bind_navigation = function(){
     });
 };
 
-var local_news = {"events":[
-    {"title":"Penguin Feeding",
-        "dates":"Every day at 2:00 p.m.",
-        "description":"Come see our penguins being fed."},
-    {"title":"Snow Foolin'",
-        "dates":"January 31, 1:30-3:30 p.m.",
-        "description":"Brrrr...Stop by the African Huts for some really cool wintery crafts."},
-    {"title":"My Heart Belongs To The Zoo",
-        "dates":"February 14, 1:30-3:30 p.m.",
-        "description":"Come on over to the African Huts and we'll help you create some special critter Valentines to give or keep."},
-    {"title":"Poison Jungle Safari",
-        "dates":"March 21, Noon-4:00 p.m.",
-        "description":"It's time for our ninth annual poison safari. This event is held in cooperation with the North Texas Poison Control Center of Dallas. Booths throughout the zoo will alert adults and children to possible poison dangers in the home."},
-    {"title":"Earth Day",
-        "dates":"April 18, 1:00-4:00 p.m.",
-        "description":"Join us as we &quot;party for the planet.&quot; The zoo joins local organizations to help all of us learn how we can make every day Earth Day."},
-]};
-
 var get_news = function () {
     $('.news-list').html('Loading...');
-    // do ajax to retrieve
-    $('.news-list').empty();
-    $.each(local_news.events, function(idx, item){
-        var itemtext = '<div class="news-title">'+item.title+'</div>';
-        itemtext += '<div class="news-dates">'+item.dates+'</div>';
-        itemtext += '<div class="news-description">'+item.description+'</div>';
-        $('.news-list').append('<li class="list-group-item">'+itemtext+'</li>');
+
+    $.ajax({
+        url: 'http://www.amazingfaithseasttexas.com/news.txt',
+        dataType: 'jsonp',
+        jsonpCallback: 'news',
+        success: function(data){
+            $('.news-list').empty();
+            $.each(data, function(idx, item){
+                var itemtext = '<div class="news-title">'+item.title+'</div>';
+                itemtext += '<div class="news-dates">'+item.dates+'</div>';
+                itemtext += '<div class="news-description">'+item.description+'</div>';
+                $('.news-list').append('<li class="list-group-item">'+itemtext+'</li>');
+            });
+        }
     });
+
 };
